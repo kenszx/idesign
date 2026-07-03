@@ -1,0 +1,1 @@
+{"name":"design-direction-advisor","version":"1.0.0","category":"Design / Direction","description":"Fallback mode for ambiguous requests. Runs 3 parallel sub-agents with different strategies to produce real HTML visual options.","compat":["claude-code","hermes","cursor","codex"]}

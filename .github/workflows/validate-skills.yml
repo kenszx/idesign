@@ -1,0 +1,39 @@
+name: Validate Skills
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+  push:
+    branches: [main, master]
+    paths:
+      - 'skills/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate skill structure
+        run: |
+          errors=0
+          for dir in skills/*/; do
+            name=$(basename "$dir")
+            if [ ! -f "${dir}SKILL.md" ]; then
+              echo "❌ $name: missing SKILL.md"
+              errors=$((errors+1))
+            fi
+            if [ ! -f "${dir}manifest.json" ]; then
+              echo "❌ $name: missing manifest.json"
+              errors=$((errors+1))
+            fi
+            echo "✅ $name: OK"
+          done
+          if [ $errors -gt 0 ]; then
+            echo "Found $errors errors"
+            exit 1
+          fi
+          echo "All skills valid"

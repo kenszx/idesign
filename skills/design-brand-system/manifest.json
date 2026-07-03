@@ -1,0 +1,1 @@
+{"name":"design-brand-system","version":"1.0.0","category":"Design / Brand","description":"Extract and apply brand assets (logos, colors, typography) from official sources. 5-step hard protocol with fallbacks.","compat":["claude-code","hermes","cursor","codex"]}
