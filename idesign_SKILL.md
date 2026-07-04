@@ -1,16 +1,3 @@
----
-name: idesign
-description: >
-  Unified design skill collection for AI agents. Build interactive prototypes,
-  presentation slides, animations, brand systems, and more. Supports iterative
-  human-in-the-loop design workflow with checkpoint-based user participation.
-  Compatible with Claude Code, Hermes, Cursor, and Codex.
-version: 1.0.0
-platforms: [macos, linux, windows]
-tags: [design, prototyping, animation, slides, brand, critique]
-category: Design
----
-
 # Idesign — Master Dispatcher
 
 You are a design-oriented agent. Your role is to understand the user's design need,
@@ -31,19 +18,22 @@ design process.
 
 ## Sub-Skill Dispatch
 
-| User intent | Sub-skill | Phase 0 question |
+| User intent | Sub-skill (primary) | How it works |
 |---|---|---|
-| "Build a landing page / web UI / prototype" | `web-design-engineer` | "目标用户？(B端/C端/内部工具) 风格偏向？(简洁商务/创意动感/极简内容)" |
-| "Make a video presentation / explainer" | `web-video-presentation` | "视频用途？(产品演示/教学/品牌宣传) 长度？(1-3分钟/3-5分钟/5-10分钟)" |
-| "Generate an image / illustration" | `gpt-image-2` | "用途？(配图/封面/插画/概念图) 风格？(写实/扁平/3D/手绘)" |
-| "Format article / PDF / URL" | `beautiful-article` | "读者群体？文章类型？(深度分析/教程/评测/访谈)" |
-| "Find info in knowledge base" | `kb-retriever` | "搜索关键词/主题？大致方向？" |
-| "Build mobile/desktop app prototype" | `design-prototyping` | "目标平台？(iOS/Android/桌面Web) 核心功能点？" |
-| "Create a slide deck / export PPTX" | `design-slides` | "演示场景？(内部分享/客户提案/大会演讲) 页数预期？" |
-| "Animate / motion design / export MP4/GIF" | `design-animation` | "用途？(社交媒体/产品展示/品牌视频) 时长？" |
-| "Review / critique this design" | `design-critique` | "评审重点？(视觉/交互/品牌一致性) 交付物类型？" |
-| "Explore design directions / not sure about style" | `design-direction-advisor` | — (自动进入方向探索模式) |
-| "Set up brand system / extract brand assets" | `design-brand-system` | "品牌名？已有品牌素材？(logo/色板/字体/截图)" |
+| "Build a landing page / web UI / prototype / PPT / slide deck / dashboard / data viz" | `web-design-engineer` | 6-step workflow, 26 style recipes |
+| "Create a slide deck / export PPTX" | `web-design-engineer` + `slide-decks.md` + `html2pptx.js` | HTML slides → PPTX export |
+| "Make a video presentation / explainer with voiceover" | `web-video-presentation` | 23 themes, TTS synthesis, click-driven 16:9 |
+| "Generate / edit an image / illustration" | `gpt-image-2` | 18 categories, 93 structured templates |
+| "Format article / PDF / DOCX / URL into web article" | `beautiful-article` | 11 theme profiles, 10 article types |
+| "Find info in knowledge base / search PDF/Excel" | `kb-retriever` | Local KB indexing + retrieval |
+| "Animate / motion design / export MP4/GIF" | `web-design-engineer` + `animations.jsx` | Animation engine + video export pipeline |
+| "Review / critique this design" | `web-design-engineer` + `critique-guide.md` | 5-dimension critique framework |
+| "Explore design directions / not sure about style" | `web-design-engineer` + `design-directions.md` | Direction exploration mode |
+| "Set up brand system / extract brand assets" | `web-design-engineer` + `brand-asset-protocol.md` | Core Asset Protocol (5-step) |
+| "Export PPTX/PDF from HTML" | `html2pptx.js` / `export_deck_pptx.mjs` | Direct HTML→PPTX conversion |
+| "Compose video with narration + music" | `web-video-presentation` + `voiceover-pipeline.md` | TTS → mix → render MP4 |
+
+**Phase 0**: Ask exactly ONE clarifying question (never list all options). If still ambiguous, enter direction exploration mode.
 
 > **One question rule**: Ask exactly ONE question. Do not dump the full table.
 > If still ambiguous, use `design-direction-advisor`.
@@ -111,47 +101,82 @@ Applies to ALL sub-skills that generate HTML/CSS. Read `shared/anti-slop-rules.m
 
 ## Quick Reference
 
-### Sub-Skills (installed)
+### Sub-Skills (5 installed, load via Skill tool)
 
-| Sub-skill | Path |
-|---|---|
-| Web Design Engineer | `skills/web-design-engineer/SKILL.md` |
-| Web Video Presentation | `skills/web-video-presentation/SKILL.md` |
-| GPT Image 2 | `skills/gpt-image-2/SKILL.md` |
-| Beautiful Article | `skills/beautiful-article/SKILL.md` |
-| KB Retriever | `skills/kb-retriever/SKILL.md` |
+| Sub-skill | Path | Key capability |
+|---|---|---|
+| Web Design Engineer | `skills/web-design-engineer/SKILL.md` | UI / PPT / prototype / dashboard / animation / critique |
+| Web Video Presentation | `skills/web-video-presentation/SKILL.md` | 16:9 click-driven presentation + TTS voiceover |
+| GPT Image 2 | `skills/gpt-image-2/SKILL.md` | Image generation/editing, 18 cat × 93 templates |
+| Beautiful Article | `skills/beautiful-article/SKILL.md` | URL/PDF/DOCX → single-file HTML article |
+| KB Retriever | `skills/kb-retriever/SKILL.md` | Local knowledge base search (PDF/Excel) |
 
-### Design Assets
+### Style & Theme Library (150+)
 
 | Resource | Path | Count |
 |---|---|---|
-| Style recipes | `skills/web-design-engineer/references/style-recipes/` | 25 styles |
-| Video themes | `skills/web-video-presentation/themes/` | 23 themes |
-| Article themes | `skills/beautiful-article/theme-profiles/` | 12 profiles |
-| Image prompt templates | `skills/gpt-image-2/references/` | 17 categories |
-| Design philosophies | `shared/references/design-styles.md` | 10 × 5 schools |
-| Design principles | `shared/references/design-principles.md` | — |
-| Anti-slop rules | `shared/anti-slop-rules.md` | — |
-| Output formats | `shared/references/output-formats.md` | — |
-| Workflow reference | `shared/references/workflow.md` | — |
-| Brand context protocol | `shared/references/brand-context.md` | — |
-| Variation & tweaks | `shared/references/variations-and-tweaks.md` | — |
+| **Style recipes** | `skills/web-design-engineer/references/style-recipes/` | 26 |
+| **Video themes** (theme.json + tokens.css) | `skills/web-video-presentation/themes/` | 23 |
+| **Article themes** | `skills/beautiful-article/theme-profiles/` | 11 |
+| **Article types** | `skills/beautiful-article/references/article-types/` | 10 |
+| **Image templates** | `skills/gpt-image-2/references/` | 93 (17 categories) |
+| **Design philosophies** | `shared/references/design-styles.md` | 10 × 5 schools |
+| **Showcases** (HTML + screenshots) | `showcases/` | 24 (8 types × 3 styles) |
+
+### Reference Docs (30)
+
+| Category | Key files |
+|---|---|
+| **Workflow** | `workflow.md`, `output-formats.md`, `design-context.md` |
+| **Design quality** | `design-principles.md`, `anti-slop-rules.md`, `content-guidelines.md`, `verification.md` |
+| **Brand & assets** | `brand-context.md`, `brand-asset-protocol.md`, `fact-verification.md` |
+| **Slide decks** | `slide-decks.md`, `editable-pptx.md` |
+| **Animation** | `animation-best-practices.md`, `animation-pitfalls.md`, `animations.md`, `cinematic-patterns.md`, `hero-animation-case-study.md` |
+| **Video & audio** | `video-export.md`, `voiceover-pipeline.md`, `audio-design-rules.md`, `sfx-library.md`, `launch-film-director-notes.md` |
+| **Critique & tweaks** | `critique-guide.md`, `tweaks-system.md`, `variations-and-tweaks.md` |
+| **React/tech** | `react-setup.md`, `react-babel.md`, `design_canvas.jsx` |
+| **Showcase guides** | `apple-gallery-showcase.md`, `multi-perspective-parallel-case-study.md`, `scene-templates.md` |
 
 ### Shared Assets
 
-| Resource | Path |
+| Category | Files |
 |---|---|
-| Deck stage (PPT shell) | `shared/assets/deck-stage.html` |
-| Design canvas | `shared/assets/design-canvas.html` |
-| Prototype shell | `shared/assets/prototype-shell.html` |
-| Tweaks starter | `shared/assets/tweaks-starter.html` |
-| Animation engine | `shared/assets/animations.jsx` |
-| Device frames | `shared/assets/device-frames.md` |
+| **Deck/PPT stage** | `deck_index.html`, `deck_stage.js`, `deck-stage.html` |
+| **Design tools** | `design-canvas.html`, `design_canvas.jsx`, `prototype-shell.html`, `tweaks-starter.html` |
+| **Animation engine** | `animations.jsx` |
+| **Narration stage** | `narration_stage.jsx` |
+| **Device frames** | `ios_frame.jsx`, `android_frame.jsx`, `macos_window.jsx`, `browser_window.jsx`, `device-frames.md` |
+| **Audio — SFX** | 37 MP3 (9 categories: `container/`, `feedback/`, `impact/`, `keyboard/`, `magic/`, `progress/`, `terminal/`, `transition/`, `ui/`) |
+| **Audio — BGM** | 6 MP3 (`bgm-ad`, `bgm-educational`, `bgm-educational-alt`, `bgm-tech`, `bgm-tutorial`, `bgm-tutorial-alt`) |
+| **Brand assets** | `banner.svg`, `personal-asset-index.example.json` |
 
-### Demos
+### Scripts (15)
 
-| Resource | Path |
+| Script | Purpose |
 |---|---|
-| Deck demo | `demos/demo-1-deck.html` |
-| Canvas demo | `demos/demo-2-canvas.html` |
-| Prototype demo | `demos/demo-3-prototype.html` |
+| `html2pptx.js` | HTML → PPTX conversion |
+| `export_deck_pptx.mjs` | Deck stage → PPTX |
+| `export_deck_pdf.mjs` / `export_deck_stage_pdf.mjs` | Deck → PDF |
+| `gen_deck_thumbs.mjs` | Slide thumbnails |
+| `render-video.js` / `render-video-seek.js` | Video rendering |
+| `narrate-pipeline.mjs` / `mix-voiceover.sh` / `render-narration.sh` | Voiceover pipeline |
+| `tts-doubao.mjs` | Doubao TTS |
+| `fetch_images.py` | Image download |
+| `verify.py` | Design verification |
+| `add-music.sh` / `convert-formats.sh` | Audio utilities |
+
+### Demos & Showcases
+
+| Resource | Path | Count |
+|---|---|---|
+| **Demos** (interactive examples) | `demos-huashu/` | 21 HTML |
+| **Showcases** (design gallery) | `showcases/` | 24 HTML (cover / infographic / ppt / website variants × 3 styles) |
+| **Design system prompt** | `shared/claude-design-system-prompt.md` | — |
+
+### How to Use Resources in Design Flow
+
+- **Phase 1 (方向)**: Browse `showcases/INDEX.md` for visual references; pick 2-3 matching style recipes
+- **Phase 2 (骨架)**: Use `deck_index.html` + `deck_stage.js` for slide deck scaffolding
+- **Phase 3 (构建)**: Apply style recipe tokens; use device frames for mockup presentation
+- **Phase 4 (导出)**: `html2pptx.js` for PPTX, `export_deck_pdf.mjs` for PDF, `render-video.js` for MP4
+- **音频增强**: Pick BGM from `shared/assets/bgm-*.mp3`, SFX from `shared/assets/sfx/`
