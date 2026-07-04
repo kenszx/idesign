@@ -1,0 +1,60 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · bloomberg-terminal
+ *   Maximum data-ink, mission-critical density. Deep navy-black with
+ *   chrome-amber on near-black. Monospaced workhorse throughout —
+ *   no sans-serif body. Multi-pane workspaces with hairline dividers.
+ *   4-9 panels visible at once. Ticker scroll, instant state flips,
+ *   blink on data update. No radius, no shadow, no photography.
+ *
+ *   character knobs:
+ *     • hero numbers   — monospaced, tabular-aligned, amber
+ *     • rule           — 1px #2A3050 lines between panes
+ *     • card           — 0 or 2px radius (terminals don't round)
+ *     • surface        — deep navy-black layers
+ *     • motion         — ticker scroll (uniform linear), blink flash
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: deep navy-black + chrome-amber ─── */
+  --shell:        #060810;
+  --surface:      #0A0E1A;              /* ground — deep navy-black */
+  --surface-2:    #11172A;              /* surface 1 */
+  --surface-3:    #1A2138;              /* surface 2 */
+  --text:         #E8ECF4;              /* high-importance text */
+  --text-2:       #C0C5D0;
+  --text-mute:    #5E6680;              /* muted label */
+  --text-faint:   #3A4058;
+  --rule:         #2A3050;              /* pane dividers */
+  --accent:       #FFA02F;              /* SIGNATURE — amber primary */
+  --accent-soft:  rgba(255, 160, 47, 0.10);
+  --accent-glow:  rgba(255, 160, 47, 0.30);
+  --color-positive:  #00B96B;           /* price-up green */
+  --color-negative:  #F23645;           /* price-down red */
+
+  /* ─── fonts: monospaced only — no sans-serif ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "IBM Plex Mono", "JetBrains Mono", "Berkeley Mono", monospace;
+  --font-body:       "IBM Plex Mono", "JetBrains Mono", "Berkeley Mono", monospace;
+  --font-mono:       "IBM Plex Mono", "JetBrains Mono", "Berkeley Mono", monospace;
+  --font-features:   "tnum";            /* tabular figures essential */
+
+  /* ─── motion: ticker scroll, blink flash, instant flips ─── */
+  --dur-quick:     50ms;               /* blink on data update 50-80ms */
+  --dur-base:      120ms;              /* instant state flips */
+  --dur-slow:      300ms;
+  --dur-cinematic: 800ms;
+
+  /* ─── design identity: terminal density ─── */
+  --r-card:        2px;                /* 0 or 2px — terminals don't round */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-mono);
+  --hero-num-style:   normal;
+  --hero-num-weight:  400;
+  --hero-num-track:   0em;
+  --stage-pad-x:   16px;               /* minimal padding — maximum density */
+  --stage-pad-y:   12px;
+  --card-shadow:   none;               /* elevation through hairline borders only */
+  --shadow-stage:
+    0 0 0 1px var(--rule);
+}

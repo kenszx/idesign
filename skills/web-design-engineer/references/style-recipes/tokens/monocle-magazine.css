@@ -1,0 +1,58 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · monocle-magazine
+ *   International, considered, magazine-grade hierarchy. Cream paper
+ *   ground, refined slab/transitional serif, editorial red kicker.
+ *   Three-deck hierarchy: tiny red kicker -> bold serif headline ->
+ *   italic serif dek. Multi-column body with hairline rules.
+ *   No radius, no shadow. Page-turn fades, slow Ken Burns.
+ *
+ *   character knobs:
+ *     • hero numbers   — serif, italic widely used
+ *     • rule           — 1px hairline #C8C2B0
+ *     • card           — 0 radius (magazine pages don't round)
+ *     • surface        — cream paper
+ *     • motion         — minimal, page-turn fades, slow Ken Burns
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: cream paper + editorial red ─── */
+  --shell:        #E8E5DB;
+  --surface:      #F2EFE7;              /* cream paper */
+  --surface-2:    #FFFFFF;
+  --surface-3:    #E0DBCE;
+  --text:         #1A1A1A;
+  --text-2:       #2E2E2E;
+  --text-mute:    #5E6347;              /* olive */
+  --text-faint:   #8A8578;
+  --rule:         #C8C2B0;              /* hairline rules */
+  --accent:       #C7322E;              /* editorial red — Monocle's signature */
+  --accent-soft:  rgba(199, 50, 46, 0.08);
+  --accent-glow:  rgba(199, 50, 46, 0.20);
+
+  /* ─── fonts: refined serif + precision sans for kickers ─── */
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "Plantin", "Mercury", "Tiempos Headline", "Georgia", serif;
+  --font-body:       "Plantin", "Tiempos Text", "Georgia", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum", "pnum";
+  --font-label:      "Sohne", "Helvetica Now", "Inter Tight", -apple-system, sans-serif;
+
+  /* ─── motion: minimal — page-turn fades, slow Ken Burns ─── */
+  --dur-quick:     200ms;
+  --dur-base:      500ms;
+  --dur-slow:      900ms;
+  --dur-cinematic: 3000ms;             /* slow Ken Burns on lead photos */
+
+  /* ─── design identity: magazine-grade editorial ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — magazine pages don't round */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;
+  --hero-num-track:   -0.01em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

@@ -1,0 +1,66 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · mid-century-modern
+ *   1950s-60s American graphic modernism — Paul Rand, Saul Bass.
+ *   Geometric shapes as primary visual. Flat color only, no gradients.
+ *   Warm cream ground, 3 colors max per piece. Geometric grotesque
+ *   (Futura/Avenir) at large scale. Humanist serif body. No radius,
+ *   no shadow. Shapes slide into place on a single beat — like a
+ *   Saul Bass title sequence. Hand-cut paper feel.
+ *
+ *   character knobs:
+ *     • hero numbers   — geometric grotesque, condensed, figures-as-image
+ *     • rule           — none (flat color blocks separate)
+ *     • card           — 0 radius (geometric, not soft)
+ *     • surface        — warm cream / mustard / muted teal
+ *     • motion         — minimal, shapes on a single beat
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: 3 colors max — cream + mustard + ink ─── */
+  --shell:        #EBE3D2;              /* warm cream ground */
+  --surface:      #EBE3D2;
+  --surface-2:    #F2ECE0;
+  --surface-3:    #D9A441;              /* mustard block */
+  --text:         #1A1A18;
+  --text-2:       #33332E;
+  --text-mute:    #6B6B60;
+  --text-faint:   #9E9E90;
+  --rule:         #C8C0AE;
+  --accent:       #D9A441;              /* mustard */
+  --accent-soft:  rgba(217, 164, 65, 0.12);
+  --accent-glow:  rgba(217, 164, 65, 0.20);
+  --color-teal:   #3D6E70;              /* muted teal */
+  --color-brick:  #B84A1F;              /* brick */
+
+  /* ─── fonts: geometric grotesque display + humanist serif body ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Futura", "Avenir", "ITC Avant Garde", sans-serif;
+  --font-body:       "Sabon", "Garamond", "Georgia", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum";
+
+  /* ─── motion: minimal — shapes on a single beat ─── */
+  --dur-quick:     150ms;
+  --dur-base:      300ms;
+  --dur-slow:      500ms;
+  --dur-cinematic: 800ms;
+
+  /* ─── design identity: geometric modernism, flat color ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius throughout */
+  --r-stage:       0;
+  --rule-w:        0px;
+  --rule-style:    none;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  600;
+  --hero-num-track:   -0.02em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* SIGNATURE — flat color shapes only */
+  --shadow-stage:  none;
+
+  /* ─── decoration: subtle paper grain texture ─── */
+  --surface-pattern: none;             /* grain applied via image, not CSS */
+  --surface-pattern-size: 0;
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 0;
+}

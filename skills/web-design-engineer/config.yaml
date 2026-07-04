@@ -1,0 +1,41 @@
+# Idesign Pipeline Configuration
+# idesign v2 — 从设计到交付的自动化编译管道
+
+pipeline:
+  name: "idesign-v2"
+  max_retries: 3                         # Critic 打回 Executor 的最大次数
+  auto_compile: true                     # 审查通过后自动编译输出
+
+llm:
+  planner:
+    model: "claude-opus-4-7"             # 需要强推理+结构化输出
+    temperature: 0.3
+    max_tokens: 8000
+  executor:
+    model: "claude-sonnet-4-6"           # 前端代码能力强
+    temperature: 0.5
+    max_tokens: 16000
+  critic:
+    model: "claude-opus-4-7"             # 视觉审查需要最强模型
+    temperature: 0.1
+    max_tokens: 4000
+
+paths:
+  workspace: "./workspace"
+  themes: "./themes"                     # Marp CSS 主题目录
+  fonts: []
+
+tools:
+  marp_cli: "npx @marp-team/marp-cli"
+  playwright_browser: "chromium"
+
+defaults:
+  aspect_ratio: "16:9"
+  slide_width: 1280
+  slide_height: 720
+  language: "zh-CN"
+
+output:
+  formats: ["pptx", "pdf", "html"]
+  pptx_quality: "editable"               # editable | print
+  pdf_print: true                        # 同时导出打印版 PDF

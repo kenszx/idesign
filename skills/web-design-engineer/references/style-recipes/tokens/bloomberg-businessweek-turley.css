@@ -1,0 +1,60 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · bloomberg-businessweek-turley
+ *   Typographic violence. Magazine grid abused, copy IS image.
+ *   Aggressive saturated colors (alert-orange, signal-yellow, alert-blue)
+ *   on black or white. Bold grotesque at 200px+, kerned tighter than
+ *   comfortable. Jarring cuts, no smooth eases. Maximum 3 colors.
+ *
+ *   character knobs:
+ *     • hero numbers   — bold grotesque, 800-900 weight, absurd scale
+ *     • rule           — none (color blocks separate)
+ *     • card           — 0 radius
+ *     • surface        — white or black, no pattern
+ *     • motion         — jarring cuts, slams into place
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: aggressive — alert orange / yellow / blue ─── */
+  --shell:        #FFFFFF;
+  --surface:      #FFFFFF;
+  --surface-2:    #F5F5F5;
+  --surface-3:    #E0E0E0;
+  --text:         #000000;
+  --text-2:       #1A1A1A;
+  --text-mute:    #555555;
+  --text-faint:   #888888;
+  --rule:         #CCCCCC;
+  --accent:       #FF3D00;              /* high-alert orange */
+  --accent-soft:  rgba(255, 61, 0, 0.12);
+  --accent-glow:  rgba(255, 61, 0, 0.35);
+  --color-yellow: #FFE800;              /* signal yellow */
+  --color-blue:   #001AFF;              /* alert blue */
+
+  /* ─── fonts: bold grotesque at absurd scale + small serif body ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Founders Grotesk", "Druk", "ABC Whyte", "Inter Tight", sans-serif;
+  --font-body:       "Plantin", "Mercury", "Georgia", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum";
+
+  /* ─── motion: jarring cuts ─── */
+  --dur-quick:     100ms;
+  --dur-base:      200ms;
+  --dur-slow:      350ms;
+  --dur-cinematic: 600ms;
+
+  /* ─── design identity: typographic violence ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius */
+  --r-stage:       0;
+  --rule-w:        2px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  900;              /* SIGNATURE — absurd scale, ultra weight */
+  --hero-num-track:   -0.06em;          /* tighter than comfortable */
+  --stage-pad-x:   60px;
+  --stage-pad-y:   40px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+
+  /* ─── decoration: none — color blocks do the work ─── */
+}

@@ -1,0 +1,62 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · linear
+ *   Quiet luxury for developer tools. Warm dark with hairline detail,
+ *   restraint as confidence. Near-black ground with warm undertone.
+ *   Hairline 1px borders on every panel. Purple accent on < 5% of
+ *   pixels. Inter Tight display, Inter body. Modest radius (6-16px),
+ *   barely-there shadow. Snappy but not bouncy motion (quint curve).
+ *
+ *   character knobs:
+ *     • hero numbers   — Inter Tight, weight 600, tight tracking
+ *     • rule           — 1px hairline rgba(255,255,255,0.06) everywhere
+ *     • card           — 6/12/16 radius (modest, precise, never gummy)
+ *     • surface        — layered warm dark panels
+ *     • motion         — ease-out 150ms hover, 350-450ms layout, quint curve
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: warm dark + purple accent ─── */
+  --shell:        #040508;
+  --surface:      #08090A;              /* near-black with warm undertone */
+  --surface-2:    #16171C;              /* surface 1 */
+  --surface-3:    #1E1F25;              /* surface 2 / raised panels */
+  --text:         #F7F8F8;              /* primary text */
+  --text-2:       #D1D5DB;
+  --text-mute:    #9CA3AF;              /* secondary text */
+  --text-faint:   #6B7280;              /* muted text */
+  --rule:         rgba(255, 255, 255, 0.06);  /* SIGNATURE — hairline everywhere */
+  --accent:       #5E6AD2;              /* Linear purple — < 5% of pixels */
+  --accent-soft:  rgba(94, 106, 210, 0.08);
+  --accent-glow:  rgba(94, 106, 210, 0.20);
+  --color-code-bg: #1E1F25;
+  --color-code-text: #A78BFA;
+
+  /* ─── fonts: Inter Tight display, Inter body ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Inter Tight", "Sohne", "Geist Sans", sans-serif;
+  --font-body:       "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "Geist Mono", "JetBrains Mono", "Berkeley Mono", monospace;
+  --font-features:   "tnum", "ss01", "ss02", "cv02";
+
+  /* ─── motion: snappy but not bouncy — quint curve ─── */
+  --ease-quint:   cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-quick:     150ms;
+  --dur-base:      400ms;
+  --dur-slow:      650ms;
+  --dur-cinematic: 1000ms;
+
+  /* ─── design identity: quiet luxury, hairline detail ─── */
+  --r-card:        12px;               /* 6 small / 12 medium / 16 large — never above 16 */
+  --r-stage:       8px;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  600;
+  --hero-num-track:   -0.02em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   0 1px 2px rgba(0, 0, 0, 0.30);  /* barely there */
+  --shadow-stage:
+    0 40px 100px rgba(0, 0, 0, 0.50),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}

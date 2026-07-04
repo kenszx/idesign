@@ -1,0 +1,63 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · field-io
+ *   Generative motion identity. The brand is movement; the page
+ *   generates itself. Dark base with one or two generative gradient
+ *   hues (deep cyan → electric violet). Variable fonts that animate
+ *   on their own axes during scroll. Choreographed multi-element
+ *   entries on staggered delays. WebGL/Canvas lighting, not CSS shadow.
+ *
+ *   character knobs:
+ *     • hero numbers   — variable font, weight/width morphs on scroll
+ *     • rule           — none (generative lighting separates)
+ *     • card           — 0 radius
+ *     • surface        — near-black dark base
+ *     • motion         — multi-stage choreography, particle systems
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: dark base + electric cyan/violet ─── */
+  --shell:        #050508;
+  --surface:      #0B0B0F;
+  --surface-2:    #101018;
+  --surface-3:    #181820;
+  --text:         #FFFFFF;
+  --text-2:       #C8C8D4;
+  --text-mute:    #A0A4B0;
+  --text-faint:   #606878;
+  --rule:         rgba(255, 255, 255, 0.06);
+  --accent:       #0CE0E5;              /* deep cyan — generative hue */
+  --accent-soft:  rgba(12, 224, 229, 0.08);
+  --accent-glow:  rgba(12, 224, 229, 0.30);
+  --color-violet: #5B2EFF;              /* electric violet — secondary hue */
+
+  /* ─── fonts: variable font that animates ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Sohne Variable", "Editorial New Variable", "Inter Display Variable", sans-serif;
+  --font-body:       "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01";
+
+  /* ─── motion: choreographed, multi-stage, long-tail eases ─── */
+  --dur-quick:     200ms;
+  --dur-base:      700ms;
+  --dur-slow:      1400ms;
+  --dur-cinematic: 4000ms;
+  --ease-long-tail: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* ─── design identity: generative motion ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius */
+  --r-stage:       0;
+  --rule-w:        0px;
+  --rule-style:    none;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  500;
+  --hero-num-track:   -0.02em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* lighting via WebGL / Canvas */
+  --shadow-stage:
+    0 80px 200px rgba(0, 0, 0, 0.80),
+    0 0 180px rgba(12, 224, 229, 0.06);
+
+  /* ─── decoration: none — the generative motion is the surface ─── */
+}

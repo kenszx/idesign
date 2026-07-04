@@ -1,0 +1,55 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · apple-hig
+ *   Apple Human Interface. Generous space, hero product on white, one
+ *   thought per screen. Hairline dividers. Elevation through whitespace
+ *   and color contrast, not shadow. Expo-out motion, Ken Burns on hero.
+ *
+ *   character knobs:
+ *     • hero numbers   — SF Pro Display, weight 600, display-weight chars
+ *     • rule           — 1px hairline #D2D2D7
+ *     • card           — 12/18/22 radius (modest, never gummy)
+ *     • surface        — pure white / soft #F5F5F7
+ *     • motion         — cubic-bezier expo-out, 350-650ms
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: white / not-quite-black / system-blue ─── */
+  --shell:        #F5F5F7;
+  --surface:      #FFFFFF;
+  --surface-2:    #F5F5F7;
+  --surface-3:    #EBEBED;
+  --text:         #1D1D1F;              /* Apple's not-quite-black */
+  --text-2:       #3A3A3C;
+  --text-mute:    #86868B;
+  --text-faint:   #AEAEB2;
+  --rule:         #D2D2D7;              /* hairline dividers */
+  --accent:       #0071E3;              /* system-blue — used sparingly */
+  --accent-soft:  rgba(0, 113, 227, 0.08);
+  --accent-glow:  rgba(0, 113, 227, 0.20);
+
+  /* ─── fonts: SF Pro — fall back to Inter Tight ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "SF Pro Display", "Inter Tight", "Helvetica Neue", sans-serif;
+  --font-body:       "SF Pro Text", "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01", "ss02";
+
+  /* ─── motion: expo-out, never bouncy ─── */
+  --dur-quick:     150ms;
+  --dur-base:      500ms;
+  --dur-slow:      800ms;
+  --dur-cinematic: 2000ms;             /* Ken Burns on hero ~15-20s */
+
+  /* ─── design identity: generous space, hairline detail ─── */
+  --r-card:        18px;               /* 12 small / 18 cards / 22 large */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  600;
+  --hero-num-track:   -0.02em;
+  --stage-pad-x:   96px;
+  --stage-pad-y:   72px;
+  --card-shadow:   0 1px 2px rgba(0, 0, 0, 0.04);  /* barely visible */
+  --shadow-stage:  none;
+}

@@ -1,0 +1,65 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · active-theory
+ *   Cinematic WebGL experiences. Dark stage with a single dramatic hue
+ *   from the project's content — black + one signature color. Tinted
+ *   neutrals (cool blue cast for sci-fi, warm amber for cinematic).
+ *   Feature-film-grade motion: camera moves through 3D space,
+ *   physics-driven particles. The page is a stage.
+ *
+ *   character knobs:
+ *     • hero numbers   — strong grotesque display, all-caps common
+ *     • rule           — none (lighting separates surfaces)
+ *     • card           — 0 radius (cinematic, not UI)
+ *     • surface        — deep black with tinted cast
+ *     • motion         — cinematic, choreographed, scroll = camera path
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: deep black + single dramatic hue ─── */
+  --shell:        #050508;
+  --surface:      #0A0A10;
+  --surface-2:    #0E0E18;
+  --surface-3:    #141420;
+  --text:         #F0F0F5;
+  --text-2:       #C0C0CC;
+  --text-mute:    #707088;
+  --text-faint:   #484860;
+  --rule:         rgba(255, 255, 255, 0.06);
+  --accent:       #3366FF;             /* single dramatic hue — swap per project */
+  --accent-soft:  rgba(51, 102, 255, 0.10);
+  --accent-glow:  rgba(51, 102, 255, 0.30);
+
+  /* ─── fonts: strong grotesque display, body secondary ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Druk Wide", "Editorial New", "ABC Diatype Mono", "Inter Tight", sans-serif;
+  --font-body:       "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01";
+
+  /* ─── motion: feature-film-grade, choreographed ─── */
+  --dur-quick:     200ms;
+  --dur-base:      600ms;
+  --dur-slow:      1200ms;
+  --dur-cinematic: 3000ms;
+
+  /* ─── design identity: cinematic WebGL ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius, cinematic */
+  --r-stage:       0;
+  --rule-w:        0px;                /* lighting separates surfaces, not rules */
+  --rule-style:    none;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;
+  --hero-num-track:   -0.04em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* shadow comes from WebGL lighting */
+  --shadow-stage:
+    0 80px 200px rgba(0, 0, 0, 0.70),
+    0 0 120px rgba(51, 102, 255, 0.08);
+
+  /* ─── decoration: subtle ambient tint ─── */
+  --surface-pattern: none;
+  --surface-pattern-size: 0;
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 0;
+}

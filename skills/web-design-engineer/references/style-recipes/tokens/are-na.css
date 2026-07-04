@@ -1,0 +1,57 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · are-na
+ *   Honest Web. System fonts on purpose, content > chrome, the web of
+ *   the late 90s but considered. Browser-default blue links and purple
+ *   visited links used unironically. No custom fonts, no animations,
+ *   no shadow, no radius. Flat rectangles with 1px gray border.
+ *
+ *   character knobs:
+ *     • hero numbers   — system serif or sans, no special treatment
+ *     • rule           — 1px #CCCCCC
+ *     • card           — 0 radius, flat rectangles
+ *     • surface        — white or warm cream for cards
+ *     • motion         — none (instant)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: ink + ground + browser-default links ─── */
+  --shell:        #FFFFFF;
+  --surface:      #FFFFFF;
+  --surface-2:    #F4F1E8;              /* optional warm cream for cards */
+  --surface-3:    #E8E5DA;
+  --text:         #000000;
+  --text-2:       #1A1A1A;
+  --text-mute:    #555555;
+  --text-faint:   #888888;
+  --rule:         #CCCCCC;
+  --accent:       #0000EE;              /* classic browser-default blue */
+  --accent-soft:  rgba(0, 0, 238, 0.06);
+  --accent-glow:  rgba(0, 0, 238, 0.15);
+  --link-visited: #551A8B;             /* classic browser-default visited */
+
+  /* ─── fonts: system fonts on purpose, no custom loading ─── */
+  --font-display-cn: -apple-system, "Noto Sans SC", sans-serif;
+  --font-display-en: -apple-system, "Times New Roman", "Georgia", serif;
+  --font-body:       -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:       "Courier New", ui-monospace, monospace;
+  --font-features:   "tnum";
+
+  /* ─── motion: none, instant ─── */
+  --dur-quick:     0ms;
+  --dur-base:      0ms;
+  --dur-slow:      0ms;
+  --dur-cinematic: 0ms;
+
+  /* ─── design identity: honest web, no polish ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  400;
+  --hero-num-track:   0em;
+  --stage-pad-x:   48px;
+  --stage-pad-y:   36px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

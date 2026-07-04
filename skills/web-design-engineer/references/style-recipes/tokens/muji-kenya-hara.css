@@ -1,0 +1,58 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · muji-kenya-hara
+ *   Emptiness as fullness, off-white as a value, near-silence. Warm
+ *   paper off-white ground (never pure white), warm ink (never pure
+ *   black). Humanist sans at weight 400, never bolder than 500. No
+ *   accent — or a single brand red corner mark only. 60-80% of page
+ *   is empty space. Hard edges (0 radius). Imperceptible motion
+ *   (fades over 600-900ms). Hairline rules only ornament.
+ *
+ *   character knobs:
+ *     • hero numbers   — humanist sans, weight 400, slightly open tracking
+ *     • rule           — 1px hairline #D9D6CD
+ *     • card           — 0 radius, hard honest edges
+ *     • surface        — warm off-white, never pure white
+ *     • motion         — imperceptible fades, 600-900ms, never bouncy
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: off-white paper + warm ink ─── */
+  --shell:        #EAE8E2;
+  --surface:      #F4F2EC;              /* warm paper off-white — never #FFFFFF */
+  --surface-2:    #FFFFFF;
+  --surface-3:    #E8E5DD;
+  --text:         #2A2A28;              /* warm ink — never #000000 */
+  --text-2:       #4A4A46;
+  --text-mute:    #7C7B76;
+  --text-faint:   #A8A6A0;
+  --rule:         #D9D6CD;              /* hairline rules — the only ornament */
+  --accent:       #C8161D;              /* MUJI red — only as tiny corner mark */
+  --accent-soft:  rgba(200, 22, 29, 0.06);
+  --accent-glow:  rgba(200, 22, 29, 0.12);
+
+  /* ─── fonts: humanist sans, never bolder than 500 ─── */
+  --font-display-cn: "Noto Sans SC", "Noto Sans CJK SC", -apple-system, sans-serif;
+  --font-display-en: "Sohne", "Inter Tight", "Calibre", -apple-system, sans-serif;
+  --font-body:       "Sohne", "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01";
+
+  /* ─── motion: imperceptible — slow fades only ─── */
+  --dur-quick:     600ms;
+  --dur-base:      900ms;
+  --dur-slow:      1400ms;
+  --dur-cinematic: 2400ms;
+
+  /* ─── design identity: emptiness as fullness ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius, hard honest edges */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  400;              /* SIGNATURE — never bolder than 500 */
+  --hero-num-track:   0.01em;           /* slightly open */
+  --stage-pad-x:   120px;               /* generous emptiness */
+  --stage-pad-y:   160px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

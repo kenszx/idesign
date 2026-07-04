@@ -1,0 +1,67 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · dieter-rams-braun
+ *   "Less but better." Functional honesty, industrial restraint.
+ *   Concrete light ground, precision grotesk at weight 400-500 (never
+ *   700). A single signal-orange dot indicating active/power — never
+ *   decorative. 4px sub-grid. Sharp edges (2-4px max radius), no
+ *   shadow, utilitarian motion. The page feels like a piece of
+ *   equipment.
+ *
+ *   character knobs:
+ *     • hero numbers   — monospaced variant for spec tables
+ *     • rule           — 1px solid, industrial gray
+ *     • card           — 2-4px radius max (sharp by default)
+ *     • surface        — concrete light / paper
+ *     • motion         — instant state changes 80-120ms, no flourish
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: concrete light + signal orange ─── */
+  --shell:        #E4E1DC;
+  --surface:      #F5F4F0;
+  --surface-2:    #E4E1DC;
+  --surface-3:    #D0CDC5;
+  --text:         #191919;
+  --text-2:       #2E2E2E;
+  --text-mute:    #5C5C5C;
+  --text-faint:   #A8A8A8;
+  --rule:         #C8C4BB;
+  --accent:       #E96A26;              /* SIGNATURE — Braun orange, functional only */
+  --accent-soft:  rgba(233, 106, 38, 0.08);
+  --accent-glow:  rgba(233, 106, 38, 0.20);
+  --color-yellow: #F5C518;              /* signal yellow — functional accent */
+
+  /* ─── fonts: precision grotesk, never 700 ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Akzidenz-Grotesk", "Helvetica Now", "Sohne", "Inter Tight", sans-serif;
+  --font-body:       "Akzidenz-Grotesk", "Helvetica Now", "Sohne", "Inter", sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01";
+
+  /* ─── motion: utilitarian — instant, no flourish ─── */
+  --dur-quick:     80ms;
+  --dur-base:      120ms;
+  --dur-slow:      200ms;
+  --dur-cinematic: 400ms;
+
+  /* ─── design identity: functional honesty ─── */
+  --r-card:        2px;                /* 2-4px maximum, sharp by default */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-mono);
+  --hero-num-style:   normal;
+  --hero-num-weight:  400;
+  --hero-num-track:   0em;
+  --stage-pad-x:   64px;
+  --stage-pad-y:   48px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+
+  /* ─── decoration: none — the equipment is the ornament ─── */
+  --surface-pattern:
+    linear-gradient(rgba(25, 25, 25, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25, 25, 25, 0.06) 1px, transparent 1px);
+  --surface-pattern-size: 4px 4px;      /* 4px sub-grid */
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 0.4;
+}

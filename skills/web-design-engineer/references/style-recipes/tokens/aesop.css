@@ -1,0 +1,57 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · aesop
+ *   Apothecary refinement. Warm chamois ground, sage and ink, serif
+ *   copy as conversation. Aesop pairs a single transitional serif at
+ *   every size with a sans for UI labels. Square-edged throughout.
+ *   No shadow. Subtle fades only — never spring-bounce.
+ *
+ *   character knobs:
+ *     • hero numbers   — serif, regular weight (never bold)
+ *     • rule           — 1px in sage or hairline tone
+ *     • card           — 0 radius (square-edged apothecary)
+ *     • surface        — warm chamois / cream, no pattern
+ *     • motion         — subtle fades, slow drawer slides (~450ms)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: chamois / sage / amber ─── */
+  --shell:        #E8E4D9;
+  --surface:      #F2EFE5;
+  --surface-2:    #F0EDE4;
+  --surface-3:    #E0DBCC;
+  --text:         #1B1B1B;
+  --text-2:       #3A3A3A;
+  --text-mute:    #7A8470;              /* sage muted */
+  --text-faint:   #A09888;
+  --rule:         #D6D0C2;
+  --accent:       #7A4623;              /* amber bottle accent — used sparingly */
+  --accent-soft:  rgba(122, 70, 35, 0.08);
+  --accent-glow:  rgba(122, 70, 35, 0.20);
+
+  /* ─── fonts: transitional serif + sans for UI labels ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Suisse Works", "Lyon Text", "GT Sectra", "Times New Roman", serif;
+  --font-body:       "Suisse Works", "Lyon Text", "GT Sectra", "Noto Serif SC", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum";
+  --font-label:      "Sohne", "Helvetica Now", "Inter", -apple-system, sans-serif;
+
+  /* ─── motion: subtle fades, never bouncy ─── */
+  --dur-quick:     250ms;
+  --dur-base:      450ms;
+  --dur-slow:      700ms;
+  --dur-cinematic: 1200ms;
+
+  /* ─── design identity: square-edged apothecary ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius throughout */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  400;              /* SIGNATURE — regular weight, never bold */
+  --hero-num-track:   0em;
+  --stage-pad-x:   96px;
+  --stage-pad-y:   72px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

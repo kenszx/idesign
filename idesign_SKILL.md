@@ -1,18 +1,19 @@
-# Idesign — Master Dispatcher
+# Idesign v2 — 从设计到交付，一条龙
 
-You are a design-oriented agent. Your role is to understand the user's design need,
-select the appropriate sub-skill, and guide an **interactive, human-in-the-loop**
-design process.
+> **v2 核心升级**: Phase 0-2 保留人机交互设计 → Phase 3-5 新增自动化编译管道。
+> 输出从"可翻页 HTML 预览"升级为"可编辑 .pptx + 高清 .pdf"。
+
+You are a design-oriented agent. Understand the user's design need, guide an **interactive design process** (Phase 0-2), then dispatch to the **automated compilation pipeline** (Phase 3-5) for Marp/Playwright rendering, VLM quality review, and final PPTX/PDF delivery.
 
 ---
 
 ## How to Use This Skill
 
 1. **Classify** — Map the user's request to exactly one sub-skill
-2. **Clarify** — If ambiguous, ask exactly 1 clarifying question (never list all options)
-3. **Load** — Read the sub-skill's SKILL.md and follow its workflow
-4. **Iterate** — At each phase, present options and wait for user confirmation
-5. **Fallback** — If no sub-skill matches, use `design-direction-advisor`
+2. **Clarify** — If ambiguous, ask exactly 1 clarifying question
+3. **Design** — Phase 0-2: human-in-the-loop style/layout decisions
+4. **Compile** — Phase 3-5: automated Planner → Executor → Critic → Compiler Pipeline
+5. **Fallback** — If design style unclear, enter direction exploration mode
 
 ---
 
@@ -76,9 +77,68 @@ design process.
 
 ### ⛔ 每个模块的确认是独立检查点，前一个没确认不能做下一个
 
-### Phase 4 — 精调导出
+### Phase 4 — 自动编译管道（v2 新增）
 
-最终润色 → 问用户是否满意 → 交付。
+Phase 2 骨架确认后，可选择进入自动化管道。管道位于：
+`skills/web-design-engineer/pipeline/`
+
+#### Phase 4 启动指令
+
+```
+用户确认骨架后，说："开始编译管道。风格: [linear/aesop/...]"
+```
+
+#### Pipeline 四阶段
+
+```
+Phase 4.1 [Planner/CEO]     分析文档 → 输出 schema.json 设计蓝图
+        │                    读取: 用户原始文档/需求
+        │                    产出: workspace/current_design.json
+        ▼
+Phase 4.2 [Executor/Geek]   注入 tokens.css + 接收 JSON 蓝图 → 写 Marp 源码
+        │                    读取: current_design.json + current_theme.css
+        │                    产出: workspace/output.md
+        ▼
+Phase 4.3 [Critic/Reviewer]  Playwright 渲染 → 截图 → VLM 逐页审查
+        │                    读取: output.md + screenshot.png
+        │                    产出: workspace/review_result.json (PASS/REVISE)
+        │                    ┌─ PASS → 进入 Phase 4.4
+        │                    └─ REVISE → 打回 Phase 4.2 (最多3轮)
+        ▼
+Phase 4.4 [Compiler]         Marp CLI → .pptx (可编辑) / Playwright → .pdf (高清)
+                             读取: output.md + current_theme.css
+                             产出: workspace/final_output.pptx
+```
+
+#### Pipeline 资源路径
+
+| Agent | SKILL.md | 系统提示词 |
+|------|------|------|
+| Planner | `pipeline/agents/planner/SKILL.md` | `pipeline/agents/planner/prompts/system_planner.txt` |
+| Executor | `pipeline/agents/executor/SKILL.md` | `pipeline/agents/executor/prompts/system_coder.txt` |
+| Critic | `pipeline/agents/critic/SKILL.md` | `pipeline/agents/critic/prompts/system_critic.txt` |
+
+#### 工具链
+
+| 工具 | 路径 | 功能 |
+|------|------|------|
+| `compiler_marp.py` | `pipeline/tools/` | Marp CLI 封装：Markdown → PPTX/PDF |
+| `renderer_playwright.py` | `pipeline/tools/` | 无头浏览器：HTML → 截图/PDF |
+| `scheduler.py` | `pipeline/core/` | 主调度器：串联四阶段 |
+
+#### 主题注入机制
+
+```
+Phase 1 用户选风格 "linear"
+    → 查找: references/style-recipes/tokens/linear.css
+    → 编译为 Marp 主题: workspace/current_theme.css
+    → 注入到 Executor 提示词中
+    → Executor 用 var(--accent) / var(--text) 等引用主题变量
+```
+
+### Phase 5 — 精调输出
+
+最终润色 → 问用户是否满意 → 交付 PPTX/PDF。
 
 ---
 
@@ -101,7 +161,7 @@ Applies to ALL sub-skills that generate HTML/CSS. Read `shared/anti-slop-rules.m
 
 ## Quick Reference
 
-### Sub-Skills (5 installed, load via Skill tool)
+### Sub-Skills (5 design + 3 pipeline agents = 8)
 
 | Sub-skill | Path | Key capability |
 |---|---|---|
@@ -110,6 +170,14 @@ Applies to ALL sub-skills that generate HTML/CSS. Read `shared/anti-slop-rules.m
 | GPT Image 2 | `skills/gpt-image-2/SKILL.md` | Image generation/editing, 18 cat × 93 templates |
 | Beautiful Article | `skills/beautiful-article/SKILL.md` | URL/PDF/DOCX → single-file HTML article |
 | KB Retriever | `skills/kb-retriever/SKILL.md` | Local knowledge base search (PDF/Excel) |
+
+### Pipeline Agents (v2 — automated compilation)
+
+| Agent | Path | Role |
+|------|------|------|
+| **Planner (CEO)** | `pipeline/agents/planner/SKILL.md` | Analyze docs → JSON design blueprint |
+| **Executor (Geek)** | `pipeline/agents/executor/SKILL.md` | JSON + tokens.css → Marp source code |
+| **Critic (Reviewer)** | `pipeline/agents/critic/SKILL.md` | Playwright screenshot → VLM review → Pass/Revise |
 
 ### Style & Theme Library (150+)
 

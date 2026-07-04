@@ -1,0 +1,62 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · notion-pre-ai
+ *   Friendly serif headline + emoji as first-class design element +
+ *   soft cream + warm ink. Notion's specific warm near-black (#37352F),
+ *   soft cream surfaces. GT Sectra / Sentinel display serif, Inter body.
+ *   Soft pastel accent pills (mint, peach, rose, sand). Gentle ease-out
+ *   motion, hover lifts by 2-4px. Emoji as section markers.
+ *
+ *   character knobs:
+ *     • hero numbers   — friendly modern serif, weight 500
+ *     • rule           — 1px hairline #E9E9E7
+ *     • card           — 4/8/16 radius (soft but modest)
+ *     • surface        — white / cream #F7F6F3
+ *     • motion         — gentle ease-out 200-300ms, hover lift 2-4px
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: white + cream + warm ink ─── */
+  --shell:        #F7F6F3;
+  --surface:      #FFFFFF;
+  --surface-2:    #F7F6F3;              /* soft cream surface */
+  --surface-3:    #EDECEA;
+  --text:         #37352F;              /* Notion's specific warm near-black */
+  --text-2:       #4D4B45;
+  --text-mute:    #787774;
+  --text-faint:   #A09E98;
+  --rule:         #E9E9E7;
+  --accent:       #37352F;              /* text-led, accent is muted */
+  --accent-soft:  rgba(55, 53, 47, 0.06);
+  --accent-glow:  rgba(55, 53, 47, 0.12);
+  --color-mint:   #E4F4F1;              /* soft block backgrounds */
+  --color-peach:  #FFEDD5;
+  --color-rose:   #FCE7F3;
+  --color-sand:   #FEF3C7;
+
+  /* ─── fonts: friendly modern serif display + Inter body ─── */
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "GT Sectra", "Sentinel", "Source Serif Pro", "Georgia", serif;
+  --font-body:       "Inter", "Sohne", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum";
+
+  /* ─── motion: gentle ease-out, hover lift 2-4px ─── */
+  --dur-quick:     200ms;
+  --dur-base:      300ms;
+  --dur-slow:      500ms;
+  --dur-cinematic: 800ms;
+
+  /* ─── design identity: friendly, block-based, emoji-first ─── */
+  --r-card:        8px;                /* 4 small / 8 cards / 16 large */
+  --r-stage:       4px;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  500;
+  --hero-num-track:   -0.01em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   0 2px 8px rgba(15, 15, 15, 0.04);  /* felt, not seen */
+  --shadow-stage:
+    0 10px 40px rgba(15, 15, 15, 0.03);
+}

@@ -1,0 +1,56 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · balenciaga-post-2017
+ *   Default browser styling weaponized. Helvetica at absurd scale,
+ *   anti-luxury luxury. All-caps headlines at 140px+, body at 11-13px.
+ *   No color except in photography. No radius, no shadow, no motion.
+ *   Underlined text links instead of buttons.
+ *
+ *   character knobs:
+ *     • hero numbers   — Helvetica, all-caps, absurd scale
+ *     • rule           — none (bare design)
+ *     • card           — 0 radius
+ *     • surface        — pure white, one off-white option
+ *     • motion         — none (pages don't animate)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: monochrome — no color in UI ─── */
+  --shell:        #F5F4F0;
+  --surface:      #FFFFFF;
+  --surface-2:    #F5F4F0;
+  --surface-3:    #E8E7E0;
+  --text:         #000000;
+  --text-2:       #1A1A1A;
+  --text-mute:    #555555;
+  --text-faint:   #888888;
+  --rule:         #D0D0D0;
+  --accent:       #000000;              /* no accent — links are underlined text */
+  --accent-soft:  rgba(0, 0, 0, 0.06);
+  --accent-glow:  rgba(0, 0, 0, 0.10);
+
+  /* ─── fonts: Helvetica / Arial exclusively ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Helvetica", "Arial", sans-serif;
+  --font-body:       "Helvetica", "Arial", "Noto Sans SC", sans-serif;
+  --font-mono:       "Courier New", ui-monospace, monospace;
+  --font-features:   "tnum";
+
+  /* ─── motion: none — pages don't animate ─── */
+  --dur-quick:     0ms;
+  --dur-base:      0ms;
+  --dur-slow:      0ms;
+  --dur-cinematic: 0ms;
+
+  /* ─── design identity: anti-luxury luxury ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius */
+  --r-stage:       0;
+  --rule-w:        0px;
+  --rule-style:    none;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;              /* all-caps at absurd scale */
+  --hero-num-track:   -0.04em;
+  --stage-pad-x:   60px;
+  --stage-pad-y:   40px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

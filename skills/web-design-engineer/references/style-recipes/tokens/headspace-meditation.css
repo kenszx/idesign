@@ -1,0 +1,61 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · headspace-meditation
+ *   Soft pastels, rounded everything, calming hand-drawn illustration.
+ *   Warm peach ground, coral and lavender accents, warm dark teal ink.
+ *   Rounded friendly sans. Large radius (16/24/32), buttons are pills.
+ *   Soft warm colored shadows. Gentle breathing motion (1.5-4s cycle).
+ *   Never cool palettes, never sharp corners, never harsh motion.
+ *
+ *   character knobs:
+ *     • hero numbers   — rounded friendly sans, weight 600
+ *     • rule           — none (soft color transitions separate)
+ *     • card           — 24px radius (pill-adjacent, soft-corner)
+ *     • surface        — warm peach gradient that slowly drifts
+ *     • motion         — gentle, slow, breathing (400-800ms eases)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: warm pastels ─── */
+  --shell:        #FFEDD5;
+  --surface:      #FFE2C5;              /* warm peach ground */
+  --surface-2:    #F4A573;              /* warm coral — darker surface */
+  --surface-3:    #E89050;
+  --text:         #1B3A47;              /* warm dark teal ink */
+  --text-2:       #2D4F5E;
+  --text-mute:    #5C6B7A;
+  --text-faint:   #8A9BA8;
+  --rule:         rgba(27, 58, 71, 0.10);
+  --accent:       #F5867B;              /* salmon pop */
+  --accent-soft:  rgba(245, 134, 123, 0.20);
+  --accent-glow:  rgba(245, 134, 123, 0.35);
+  --color-lavender: #B0A5D1;            /* muted lavender — one per scene */
+  --color-sage:     #9DB67A;            /* sage — one per scene */
+
+  /* ─── fonts: rounded friendly sans ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Apercu", "GT America", "Sohne Breit", "Inter Tight", sans-serif;
+  --font-body:       "Apercu", "GT America", "Sohne", "Inter", sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01";
+  --font-script:     "Caveat", "Kalam", cursive;
+
+  /* ─── motion: gentle, slow, breathing ─── */
+  --dur-quick:     400ms;
+  --dur-base:      800ms;
+  --dur-slow:      1600ms;
+  --dur-cinematic: 4000ms;             /* breathing cycle 1.5-4s */
+
+  /* ─── design identity: soft, rounded, calming ─── */
+  --r-card:        24px;               /* large — 16 small / 24 medium / 32 large */
+  --r-stage:       16px;
+  --rule-w:        0px;
+  --rule-style:    none;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  600;
+  --hero-num-track:   -0.01em;
+  --stage-pad-x:   96px;
+  --stage-pad-y:   72px;
+  --card-shadow:   0 8px 24px rgba(244, 165, 115, 0.20);  /* warm colored shadow */
+  --shadow-stage:
+    0 40px 120px rgba(244, 165, 115, 0.12);
+}
