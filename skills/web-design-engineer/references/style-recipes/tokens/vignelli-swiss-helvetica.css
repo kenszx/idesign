@@ -1,0 +1,65 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · vignelli-swiss-helvetica
+ *   Strict grid, Helvetica throughout. "Six typefaces are enough."
+ *   Black + white + one accent (red/yellow/blue/orange — only one,
+ *   never two). Hierarchy by size, not weight or color. 8px baseline
+ *   grid, 12-column layout. Helvetica weights: 400/500/700, no italic.
+ *   Visible grid lines when helpful. No radius, no shadow, no motion.
+ *   Information sets in tabular layouts with strict baseline alignment.
+ *
+ *   character knobs:
+ *     • hero numbers   — Helvetica, weight 700, hierarchy by size only
+ *     • rule           — 1px solid, sometimes drawn as visible grid gutters
+ *     • card           — 0 radius always
+ *     • surface        — white with single accent color bar
+ *     • motion         — none, or instant (static by nature)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: black + white + ONE accent ─── */
+  --shell:        #E8E8E8;
+  --surface:      #FFFFFF;
+  --surface-2:    #F5F5F5;
+  --surface-3:    #E0E0E0;
+  --text:         #000000;
+  --text-2:       #1A1A1A;
+  --text-mute:    #8A8A8A;
+  --text-faint:   #B0B0B0;
+  --rule:         #000000;
+  --accent:       #E2231A;              /* red — only ONE accent (swap: #F5C518 / #0033A0 / #FF6F00) */
+  --accent-soft:  rgba(226, 35, 26, 0.08);
+  --accent-glow:  rgba(226, 35, 26, 0.20);
+
+  /* ─── fonts: Helvetica exclusively ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Helvetica", "Helvetica Now", "Helvetica Neue", sans-serif;
+  --font-body:       "Helvetica", "Helvetica Now", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum";
+
+  /* ─── motion: none, or instant ─── */
+  --dur-quick:     0ms;
+  --dur-base:      0ms;
+  --dur-slow:      0ms;
+  --dur-cinematic: 0ms;
+
+  /* ─── design identity: strict Swiss grid ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius, always */
+  --r-stage:       0;
+  --rule-w:        1px;                /* SIGNATURE — visible grid gutters */
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;
+  --hero-num-track:   -0.02em;
+  --stage-pad-x:   72px;
+  --stage-pad-y:   54px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+
+  /* ─── decoration: visible grid lines ─── */
+  --surface-pattern:
+    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  --surface-pattern-size: 8px 8px;      /* 8px baseline grid */
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 0.3;
+}

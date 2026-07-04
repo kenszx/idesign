@@ -1,0 +1,67 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · resn-storytelling
+ *   Story through scroll. Surprise as the reward. Warm-cool contrasted
+ *   within one piece. Campaign-specific display face. Long-form
+ *   choreography — a single page tells a 90-second story across 8-12
+ *   scroll triggers. Cursor-reactive surface materials, easter eggs.
+ *   Each section treated as a film scene with its own art direction.
+ *   Fewer, better beats. A reward at the end.
+ *
+ *   character knobs:
+ *     • hero numbers   — campaign-specific display face
+ *     • rule           — none (cinematic cuts separate scenes)
+ *     • card           — project-dependent, default 0
+ *     • surface        — cinematic dark, project-driven palette
+ *     • motion         — long-form choreography, 8-12 scroll triggers
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: cinematic dark, warm-cool contrast ─── */
+  --shell:        #08080C;
+  --surface:      #0E0E16;
+  --surface-2:    #161620;
+  --surface-3:    #20202C;
+  --text:         #F5F3EE;              /* warm off-white */
+  --text-2:       #D4D0C8;
+  --text-mute:    #908878;
+  --text-faint:   #605850;
+  --rule:         rgba(245, 243, 238, 0.08);
+  --accent:       #E88A4A;              /* warm character hue */
+  --accent-soft:  rgba(232, 138, 74, 0.10);
+  --accent-glow:  rgba(232, 138, 74, 0.25);
+  --color-cool:   #3A8FD4;              /* cool environment hue */
+
+  /* ─── fonts: campaign-specific display + quiet humanist body ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Druk", "Editorial New", "Sharp Grotesk", "Inter Tight", sans-serif;
+  --font-body:       "Sohne", "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01";
+
+  /* ─── motion: long-form choreography, 8-12 scroll triggers ─── */
+  --dur-quick:     300ms;
+  --dur-base:      800ms;
+  --dur-slow:      1600ms;
+  --dur-cinematic: 4000ms;
+  --ease-cinematic: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* ─── design identity: story through scroll ─── */
+  --r-card:        var(--r-flat);       /* project-dependent, default 0 */
+  --r-stage:       0;
+  --rule-w:        0px;
+  --rule-style:    none;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;
+  --hero-num-track:   -0.03em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* scene-baked, not component */
+  --shadow-stage:
+    0 80px 240px rgba(0, 0, 0, 0.80);
+
+  /* ─── decoration: warm ambient vignette ─── */
+  --surface-pattern: none;
+  --surface-pattern-size: 0;
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 0;
+}

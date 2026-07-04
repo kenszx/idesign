@@ -1,0 +1,60 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · nyt-the-daily
+ *   Authoritative broadsheet. Generations of typographic craft. White
+ *   ground, Cheltenham/Sentinel display serif at weight 700, Imperial/
+ *   Georgia body at 18-20px. Three-deck hierarchy: small-caps sans
+ *   kicker -> bold serif headline -> italic standfirst. Pull-quotes
+ *   in italic at 1.5-2x body size with hairline rules. Multi-column
+ *   body on wide viewports. Left-aligned justified. No radius, no
+ *   shadow. NYT red only for breaking-news indicators.
+ *
+ *   character knobs:
+ *     • hero numbers   — serif, weight 700, italic widely used
+ *     • rule           — 1px hairline #E2E2E2
+ *     • card           — 0 radius throughout
+ *     • surface        — white ground
+ *     • motion         — minimal: sticky bylines, lazy-load fades, slow zoom
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: white ground + NYT red ─── */
+  --shell:        #F7F7F7;
+  --surface:      #FFFFFF;
+  --surface-2:    #F7F7F7;
+  --surface-3:    #EBEBEB;
+  --text:         #121212;
+  --text-2:       #2A2A2A;
+  --text-mute:    #666666;
+  --text-faint:   #999999;
+  --rule:         #E2E2E2;
+  --accent:       #D0021B;              /* NYT red — breaking-news only */
+  --accent-soft:  rgba(208, 2, 27, 0.06);
+  --accent-glow:  rgba(208, 2, 27, 0.15);
+
+  /* ─── fonts: serif voice + sans for UI/kickers ─── */
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "Sentinel", "Tiempos Headline", "Cheltenham", "Georgia", serif;
+  --font-body:       "Imperial", "Georgia", "Source Serif Pro", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum", "pnum";
+  --font-label:      "Sohne", "Franklin", "Inter Tight", -apple-system, sans-serif;
+
+  /* ─── motion: minimal — sticky bylines, lazy-load fades, slow zoom ─── */
+  --dur-quick:     200ms;
+  --dur-base:      500ms;
+  --dur-slow:      1000ms;
+  --dur-cinematic: 8000ms;             /* slow zoom on hero photo 8-15s */
+
+  /* ─── design identity: authoritative broadsheet ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius throughout */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;
+  --hero-num-track:   -0.01em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

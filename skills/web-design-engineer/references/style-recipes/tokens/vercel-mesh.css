@@ -1,0 +1,65 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · vercel-mesh
+ *   Black-and-white precision broken by a single shimmering gradient
+ *   mesh. True black ground, minimal gray surfaces, Geist Sans
+ *   (weight 500-600 display). One full-bleed gradient mesh in the
+ *   hero (cyan -> magenta -> orange, low saturation, high feather).
+ *   Otherwise strict black-and-white with hairline detail and
+ *   monospace accents. White solid buttons on black. Snappy ease-out
+ *   motion, mesh slowly drifts (10-20s loop).
+ *
+ *   character knobs:
+ *     • hero numbers   — Geist Sans / Inter Tight, weight 500-600
+ *     • rule           — 1px hairline #1F1F1F or rgba(255,255,255,0.08)
+ *     • card           — 8/12/16 radius (disciplined)
+ *     • surface        — true black layered
+ *     • motion         — snappy ease-out, mesh drifts 10-20s
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: true black + gradient mesh accents ─── */
+  --shell:        #000000;
+  --surface:      #000000;              /* true black */
+  --surface-2:    #0A0A0A;
+  --surface-3:    #111111;
+  --text:         #EDEDED;
+  --text-2:       #B8B8B8;
+  --text-mute:    #888888;
+  --text-faint:   #555555;
+  --rule:         #1F1F1F;
+  --accent:       #FFFFFF;              /* white — the CTA accent on black */
+  --accent-soft:  rgba(255, 255, 255, 0.08);
+  --accent-glow:  rgba(255, 255, 255, 0.20);
+  --color-cyan:   #0070F3;              /* gradient mesh hues */
+  --color-magenta: #FF0080;
+  --color-orange: #F5A623;
+
+  /* ─── fonts: Geist Sans ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Geist Sans", "Inter Tight", "Sohne", sans-serif;
+  --font-body:       "Geist Sans", "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "Geist Mono", "JetBrains Mono", "SF Mono", monospace;
+  --font-features:   "tnum", "ss01", "ss02";
+
+  /* ─── motion: snappy ease-out, mesh drifts slowly ─── */
+  --ease-snappy:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-quick:     200ms;
+  --dur-base:      500ms;
+  --dur-slow:      700ms;
+  --dur-cinematic: 10000ms;            /* mesh drift 10-20s loop */
+
+  /* ─── design identity: black-and-white + single mesh ─── */
+  --r-card:        12px;               /* 8 small / 12 medium / 16 large */
+  --r-stage:       8px;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  600;
+  --hero-num-track:   -0.02em;
+  --stage-pad-x:   80px;
+  --stage-pad-y:   60px;
+  --card-shadow:   none;               /* page lit by gradient mesh, not shadows */
+  --shadow-stage:
+    0 40px 120px rgba(0, 0, 0, 0.50),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}

@@ -1,0 +1,61 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · tufte-dataink
+ *   Maximum data-ink. Every pixel earns its place. Warm paper ground,
+ *   old-style/transitional serif (ET Book/Equity/Lyon) at 12-14px body
+ *   — deliberately small, the reader leans in. Two data colors only
+ *   (warm red + cool slate). Sparklines inline with body copy.
+ *   Side-notes (marginalia) in the right margin. No chart-junk:
+ *   no gridlines except faint ones, no borders, no 3D, no legends
+ *   if direct labels work. No radius, no shadow, no motion.
+ *
+ *   character knobs:
+ *     • hero numbers   — serif, small body at 12-14px, data colors
+ *     • rule           — faint #D8D2C2 reference rules
+ *     • card           — 0 radius (charts don't round)
+ *     • surface        — warm paper #FBFAF6
+ *     • motion         — none (the page is meant to be read still)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: warm paper + two data colors ─── */
+  --shell:        #F2EFE6;
+  --surface:      #FBFAF6;              /* warm paper */
+  --surface-2:    #FFFFFF;
+  --surface-3:    #EDE9DD;
+  --text:         #1B1B1A;
+  --text-2:       #2E2E2C;
+  --text-mute:    #5C5550;
+  --text-faint:   #8A8278;
+  --rule:         #D8D2C2;              /* faint reference rules — never darker */
+  --accent:       #A6300E;              /* warm data red */
+  --accent-soft:  rgba(166, 48, 14, 0.08);
+  --accent-glow:  rgba(166, 48, 14, 0.15);
+  --color-slate:  #3E4A5C;              /* cool data slate — second data color */
+
+  /* ─── fonts: old-style serif — ET Book / Equity / Lyon ─── */
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "ET Book", "Equity", "Lyon Text", "Georgia", serif;
+  --font-body:       "ET Book", "Equity", "Lyon Text", "Georgia", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum", "pnum";
+  --font-label:      "Sohne", "Inter", -apple-system, sans-serif;
+
+  /* ─── motion: none — the page is meant to be read still ─── */
+  --dur-quick:     0ms;
+  --dur-base:      0ms;
+  --dur-slow:      0ms;
+  --dur-cinematic: 0ms;
+
+  /* ─── design identity: maximum data-ink ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius, charts don't round */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  400;
+  --hero-num-track:   0em;
+  --stage-pad-x:   64px;
+  --stage-pad-y:   48px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}

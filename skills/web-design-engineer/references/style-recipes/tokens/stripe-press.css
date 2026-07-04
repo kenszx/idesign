@@ -1,0 +1,68 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · stripe-press
+ *   Books as objects. Warm bone ground, editorial serif everywhere.
+ *   Refined transitional/modern serif display (GT Sectra/Domaine),
+ *   old-style serif body at 18-19px. Foil-stamp accent colors (deep
+ *   teal, burnt sienna) — one per book. Cloth-textured section breaks.
+ *   No radius (books don't round). Book-object shadows (0 24px 48px).
+ *   Slow, slow motion: 1-2s crossfades, gentle 3D book rotation on
+ *   hover, 20s Ken Burns. Every gray has a warm cast.
+ *
+ *   character knobs:
+ *     • hero numbers   — serif, italic everywhere
+ *     • rule           — 1px hairline #C8BEA4
+ *     • card           — 0 radius (books don't round)
+ *     • surface        — warm bone, cloth-textured
+ *     • motion         — slow: 1-2s crossfades, 20s Ken Burns
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: warm bone + editorial ink + foil-stamp accents ─── */
+  --shell:        #E6DCC4;
+  --surface:      #F1ECDE;              /* warm bone ground */
+  --surface-2:    #FFFFFF;
+  --surface-3:    #E6DCC4;              /* darker surface */
+  --text:         #1A1A18;              /* very warm near-black */
+  --text-2:       #2E2E28;
+  --text-mute:    #736D5A;
+  --text-faint:   #A09888;
+  --rule:         #C8BEA4;
+  --accent:       #1B4B5A;              /* foil-stamp deep teal */
+  --accent-soft:  rgba(27, 75, 90, 0.08);
+  --accent-glow:  rgba(27, 75, 90, 0.18);
+  --color-sienna: #A04A2A;              /* burnt sienna — one per book */
+
+  /* ─── fonts: refined serif everywhere ─── */
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "GT Sectra", "Domaine Display", "Italian Old Style", "Georgia", serif;
+  --font-body:       "Source Serif Pro", "Lyon Text", "ITC Galliard", "Georgia", serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "onum", "pnum";
+  --font-label:      "Sohne", "GT America", "Inter Tight", -apple-system, sans-serif;
+
+  /* ─── motion: slow, slow, slow ─── */
+  --dur-quick:     500ms;
+  --dur-base:      1000ms;
+  --dur-slow:      2000ms;
+  --dur-cinematic: 5000ms;             /* ~20s Ken Burns on hero */
+
+  /* ─── design identity: books as objects ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — books don't have rounded corners */
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   italic;           /* italic everywhere */
+  --hero-num-weight:  400;
+  --hero-num-track:   -0.01em;
+  --stage-pad-x:   96px;
+  --stage-pad-y:   72px;
+  --card-shadow:   0 24px 48px rgba(0, 0, 0, 0.18);  /* SIGNATURE — books feel 3D */
+  --shadow-stage:
+    0 40px 100px rgba(26, 26, 24, 0.08);
+
+  /* ─── decoration: subtle cloth texture on sections ─── */
+  --surface-pattern: none;             /* cloth texture via image */
+  --surface-pattern-size: 0;
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 0;
+}

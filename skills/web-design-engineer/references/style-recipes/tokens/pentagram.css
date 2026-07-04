@@ -1,0 +1,59 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · pentagram
+ *   Bold typography as image. High-contrast two-color: ink on ground.
+ *   A single grotesque (Helvetica Now/Sohne Breit/Druk) at massive
+ *   scale — weight 700-900, headlines bigger than the column they
+ *   live in, breaking the margin on purpose. Strict 12-column grid,
+ *   baseline-grid alignment. No radius, no shadow, no gradients.
+ *   Typographic moves only. Color blocks as section dividers.
+ *
+ *   character knobs:
+ *     • hero numbers   — grotesque, weight 700-900, massive scale
+ *     • rule           — 1px rule sometimes across full page width
+ *     • card           — 0 radius (thinks in spreads, not cards)
+ *     • surface        — white / cream / bone — two-color maximum
+ *     • motion         — typographic moves only (letters shift, slide)
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette: high-contrast two-color ─── */
+  --shell:        #EFE9DC;
+  --surface:      #FFFFFF;
+  --surface-2:    #F4F1E7;              /* cream */
+  --surface-3:    #EFE9DC;              /* bone */
+  --text:         #000000;
+  --text-2:       #1A1A1A;
+  --text-mute:    #555555;
+  --text-faint:   #888888;
+  --rule:         #000000;
+  --accent:       #1E3FFF;              /* cobalt — the Pentagram/Scher signature */
+  --accent-soft:  rgba(30, 63, 255, 0.08);
+  --accent-glow:  rgba(30, 63, 255, 0.25);
+  --color-brick:  #B83A1F;              /* brick alternate */
+
+  /* ─── fonts: single grotesque at massive scale ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Helvetica Now", "Sohne Breit", "Druk", sans-serif;
+  --font-body:       "Helvetica Now", "Sohne", "Inter", "Noto Sans SC", sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum";
+
+  /* ─── motion: typographic moves only — letters shift, slide on baseline ─── */
+  --dur-quick:     200ms;
+  --dur-base:      400ms;
+  --dur-slow:      600ms;
+  --dur-cinematic: 1000ms;
+
+  /* ─── design identity: type as image ─── */
+  --r-card:        var(--r-flat);       /* SIGNATURE — 0 radius */
+  --r-stage:       0;
+  --rule-w:        1px;                /* single rule line sometimes across full width */
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  900;              /* SIGNATURE — massive scale, ultra weight */
+  --hero-num-track:   -0.04em;
+  --stage-pad-x:   72px;
+  --stage-pad-y:   54px;
+  --card-shadow:   none;               /* SIGNATURE — no shadow */
+  --shadow-stage:  none;
+}
